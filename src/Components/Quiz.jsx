@@ -108,6 +108,7 @@ function Quiz() {
             bg={'#2085a8'}
             color={'white'}
             textAlign={'center'}
+            cursor={'pointer'}
           >
             {option}
           </Box>
