@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, VStack, Heading, Text } from "@chakra-ui/react";
+import { Button, VStack, Heading, Text, Flex, Box } from "@chakra-ui/react";
 import { QuizContext } from "../Context/QuizContextProvider";
 
 function Quiz() {
@@ -81,28 +81,36 @@ function Quiz() {
     }
   };
   setQuizResult(score)
-  console.log(QuizResult, "score")
+  
   return (
-    <VStack>
-      <Heading as="h1" size="xl" textAlign="center">
-        Question {currentQuestion + 1}
-      </Heading>
-      <Text fontSize="xl" textAlign="center">
+    <VStack fontFamily={'Lora'} pt={'20px'} bg={'#eff1f7'} h={'100vh'}>
+      <Flex width={'90%'} color={'white'} justifyContent={'space-between'} fontSize={'12px'} fontWeight={500}>
+        <Box borderRadius={'10px'} p={'2px 15px'} bg={'green'}>0{currentQuestion + 1}/05</Box>
+        <Box borderRadius={'10px'} p={'2px 15px'} bg={'#b483d7'}> {timeRemaining} </Box>
+      </Flex>
+      <Text p={'5px'} pt={'50px'} fontSize="17px" textAlign="center">
         {quizData[currentQuestion].question}
       </Text>
-      <Text fontSize="lg">Time Remaining: {timeRemaining} seconds</Text>
-      <VStack>
+
+      <VStack pt={'50px'}>
         {quizData[currentQuestion].options.map((option) => (
-          <Button
+          <Box
             key={option}
             onClick={() =>
               handleAnswerOptionClick(option === quizData[currentQuestion].answer)
             }
-            colorScheme="teal"
-            size="lg"
+            p={'15px 90px'}
+            boxShadow={'xl'}
+            width={'100%'}
+          
+            borderRadius={'10px'}
+            mt={'80px'}
+            bg={'#2085a8'}
+            color={'white'}
+            textAlign={'center'}
           >
             {option}
-          </Button>
+          </Box>
         ))}
       </VStack>
     </VStack>

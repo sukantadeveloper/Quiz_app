@@ -10,7 +10,7 @@ function Home() {
   };
 
   return (
-    <Flex direction="column" align="center" justify="center" height="100vh">
+    <Flex direction="column" align="center" m={'10px'} justify="center" height="100vh">
       <Box textAlign="center">
         <Heading mb="4" fontSize="3xl">
           Welcome to the Quiz App!
@@ -19,7 +19,7 @@ function Home() {
           Test your knowledge with our fun quizzes!
         </Text>
       </Box>
-      <Image src="https://img.freepik.com/premium-vector/quiz-comic-pop-art-style_175838-505.jpg" alt="Quiz Illustration" mt="8" />
+      <Image w={'250px'} src="https://img.freepik.com/premium-vector/quiz-comic-pop-art-style_175838-505.jpg" alt="Quiz Illustration" mt="8" />
       <Button
         onClick={startQuiz}
         size="lg"
